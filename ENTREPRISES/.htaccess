@@ -1,0 +1,33 @@
+#Activation
+
+RewriteEngine On
+
+#Simple sans parametre
+
+
+RewriteRule ^partenariat.nan?$ partenariat.php
+RewriteRule ^projets.nan?$ projets.php
+RewriteRule ^recrutement.nan?$ recrutement.php
+
+# Multiple avec parametre
+
+
+RewriteRule ^level-([a-z0-9]+) level.php?cursus=$1
+
+
+#multi paramettre
+RewriteRule ^question-([a-z0-9]+)-([a-z0-9]+) q-quiz-list-question.php?quiz=$1&idcat=$2
+
+#Page erreur 404
+
+ErrorDocument 404 http://localhost/nancours/site/not-a-number
+
+#ErrorDocument 403 http://localhost/online/site/not-a-number
+
+#ErrorDocument 505 http://localhost/online/site/not-a-number
+
+
+
+# Securite fichier
+
+#Options -Indexes
